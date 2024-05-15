@@ -1,14 +1,20 @@
-const sumNumbers = document.querySelector(".sum-numbers");
+import { sayAnything } from "./loggers/logAnything";
+import { sayHello } from "./loggers/logHello";
+import { sayJello } from "./loggers/logJello";
 
-const num1 = document.querySelector(".input-1");
-const num2 = document.querySelector(".input-2");
+export const runApp = () => {
+    const sumNumbers = document.querySelector(".sum-numbers");
 
-document.querySelector(".app-form").addEventListener("submit", (event) => {
-    event.preventDefault();
+    const num1 = document.querySelector(".input-1");
+    const num2 = document.querySelector(".input-2");
 
-    sumNumbers.textContent = +num1.value + +num2.value;
-});
+    document.querySelector(".app-form").addEventListener("submit", (event) => {
+        event.preventDefault();
 
-sayHello();
-sayJello();
-sayAnything("Aloha");
+        sumNumbers.textContent = +num1.value + +num2.value;
+    });
+
+    sayHello();
+    sayJello();
+    sayAnything("Aloha");
+};
