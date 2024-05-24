@@ -99,4 +99,11 @@ input::-webkit-inner-spin-button {
   min-width: 200px;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.204);
   border-radius: 6px;
+}
+
+.webpack-image {
+  background-color: rgb(151, 151, 151);
+  width: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */

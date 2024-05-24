@@ -1,8 +1,10 @@
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
     mode: "development",
+    // mode: "production",
     entry: "./src/index.js",
     output: {
         filename: "main-[contenthash].js",
@@ -24,11 +26,26 @@ module.exports = {
                     "sass-loader", //1. Turns sass into css
                 ],
             },
+            {
+                test: /\.html$/,
+                use: ["html-loader"],
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: "file-loader",
+                options: {
+                    name: "[name].[hash].[ext]",
+                    // name: "[path][emoji:5][name].[hash].[ext]",
+                    outputPath: "images/",
+                    publicPath: "images/",
+                },
+            },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/template.html",
         }),
+        new CleanWebpackPlugin(),
     ],
 };
