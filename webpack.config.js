@@ -5,9 +5,12 @@ const path = require("path");
 module.exports = {
     mode: "development",
     // mode: "production",
-    entry: "./src/index.js",
+    entry: {
+        main: "./src/index.js",
+        vendor: "./src/vendor.js",
+    },
     output: {
-        filename: "main-[contenthash].js",
+        filename: "[name]-[contenthash].js",
         path: path.resolve(__dirname, "dist"),
     },
     module: {
